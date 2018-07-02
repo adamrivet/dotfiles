@@ -1,3 +1,3 @@
 # dotfiles
-# .tmux.conf
-# .bashrc
+.tmux.conf
+.bashrc
