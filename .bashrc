@@ -135,19 +135,46 @@ alias vi='vim'
 alias azimuth='bash /home/ad/Documents/Scripts/azimuth.sh'
 alias backupS='bash /home/ad/Documents/Scripts/backup_system.sh'
 alias backupF='bash /home/ad/Documents/Scripts/backup_file.sh'
+alias backup='bash /home/ad/Documents/Scripts/backup_all.sh'
 alias cr='clear'
 alias rebackup='bash /home/ad/Documents/Scripts/rebackup.sh'
 alias kali='VBoxManage startvm Kali'
 alias win='VBoxManage startvm Win10'
 alias manjaro='VBoxManage startvm Manjaro'
-alias mmus='mv /home/ad/Downloads/* /run/media/ad/Passport-1/Music/'
-alias mvid='mv /home/ad/Downloads/* /run/media/ad/Passport-1/Videos/'
 alias chrome='google-chrome-stable'
 alias incognito='google-chrome-stable -incognito'
 alias ll='ls -la'
 alias sb='source ~/.bashrc'
 alias vb='vim ~/.bashrc'
 alias gc='surfraw -browser=$BROWSER'
+alias indiaproxy='surfraw indiaproxy'
+alias proxyoneahoy='surfraw proxyoneahoy'
+alias az='surfraw amazon -country=ca'
+alias g='google'
+alias gD='cd /home/ad/Passport-1/Documents'
+alias gM='cd /home/ad/Passport-1/Music'
+alias gP='cd /home/ad/Passport-1/Pictures'
+alias gV='cd /home/ad/Passport-1/Videos'
+alias gh='cd ~'
+alias gr='cd /'
+alias gCR='cd /home/ad/Passport-1/Documents/Polytechnique'
+alias mD='mv /home/ad/Downloads/* /home/ad/Passport-1/Documents/'
+alias mM='mv /home/ad/Downloads/* /home/ad/Passport-1/Music/'
+alias mP='mv /home/ad/Downloads/* /home/ad/Passport-1/Pictures/'
+alias mV='mv /home/ad/Downloads/* /home/ad/Passport-1/Videos/'
+
+# Move to Documents
+mdoc(){ NAME=$1; mv "$NAME" /home/ad/Passport-1/Documents/; }
+
+# Move to Music
+mmus(){ NAME=$1; mv "$NAME" /home/ad/Passport-1/Music/; }
+
+# Move to Pictures
+mpic(){ NAME=$1; mv "$NAME" /home/ad/Passport-1/Pictures/; }
+
+# Move to Videos
+mvid(){ NAME=$1; mv "$NAME" /home/ad/Passport-1/Videos/; }
+
 
 # Make a new folder and cd into it
 mkcd(){ NAME=$1; mkdir -p "$NAME"; cd "$NAME"; }
@@ -172,6 +199,8 @@ gtpl(){ cd `cat ~/.sp`; ls; }
 
 # Goto transfer path + ls -la: goes where the previously saved tp points and ls -la
 gtpa(){ cd `cat ~/.sp`; ls -la; }
+
+calc(){ bc -l <<< "$@"; }
 
 # Transmission CLI
 tsm-clearcompleted() {
